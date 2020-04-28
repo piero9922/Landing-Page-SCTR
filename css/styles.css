@@ -34,28 +34,28 @@ header{
     line-height: 20px;
   }
   
-  .entradas{
+  .menu{
     display: flex;
     justify-content: center;
     width: 900px;
   }
   
-  .entradas ul{
+  .menu ul{
     margin: 10px 10px;
     padding: 0px 20px;
   }
   
-  .entradas li{
+  .menu li{
     list-style: none;
   }
   
-  .entradas a{
+  .menu a{
     text-decoration: none;
     color: var(--gray-color);
     font-size: 17px;
   }
 
-  .entradas a:hover{
+  .menu a:hover{
       color: black;
   }
 
@@ -218,49 +218,132 @@ form button{
     margin: 30px;
 }
 
-.boxes{
-    height: 445px;
-    display: grid;
-}
-
-.boxes-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
 .testimonies{
     background: rgb(197, 128, 96);
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(4, 0.5fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 450px 1fr;
 }
 
-
-.testimonies h1{
-    grid-column: 3/span 3;
-    display: grid;
-    align-items: end;
-    font-size: 30px;
-    margin-bottom: 0;
-    font-weight: lighter;
-    color: white;
+.slideshow{
+    height: 450px;
+    width: 675px;
+    overflow: hidden;
+}
+.cen{
+    position: absolute;
 }
 
-.testimonies h3{
-    grid-column: 3/span 4;
-    display: grid;
-    align-items: flex-end;
-    margin: 0;
-    font-size: 20px;
-    color: white;
-}
-
-.testimonies p{
-    grid-column: 3/span 5;
+.change{
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: flex-end;
-    margin-top: 0;
+}
+
+.change .tool-1,
+.change .tool-2,
+.change .tool-3,
+.change .tool-4,
+.change .tool-5{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 0 5px 20px;
+}
+
+.tool-1:hover,
+.tool-2:hover,
+.tool-3:hover,
+.tool-4:hover,
+.tool-5:hover{
+    background: #fff;
+}
+
+input[name="p"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides{
+    height: 100%;
+    width: 500%;
+    display: flex;
+}
+
+.slide{
+    width: 20%;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slide h1{
     color: white;
+    font-size: 37px;
+    font-weight: lighter;
+    margin-top: 0;
+}
+
+.slide h2{
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+
+.slide p{
+    color: white;
+    font-size: 16px;
+    font-weight: lighter;
+    width: 400px;
+    text-align: center;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    line-height: 18px;
+}
+
+.slide:nth-of-type(2){
+    background: plum;
+}
+
+.slide:nth-of-type(3){
+    background: peru;
+}
+
+.slide:nth-of-type(4){
+    background: skyblue;
+}
+
+.slide:nth-of-type(5){
+    background: silver;
+}
+
+#c1:checked ~ .pc1{
+    margin-left: 0%;
+}
+
+#c2:checked ~ .pc1{
+    margin-left: -20%;
+}
+
+#c3:checked ~ .pc1{
+    margin-left: -40%;
+}
+
+#c4:checked ~ .pc1{
+    margin-left: -60%;
+}
+
+#c5:checked ~ .pc1{
+    margin-left: -80%;
 }
 
 .help{
@@ -306,8 +389,7 @@ form button{
     text-decoration: none;
     color: white;
     font-size: 18px;
-
-}
+}  
 
 .clientes{
     background: #fcfefc;
