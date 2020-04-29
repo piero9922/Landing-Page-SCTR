@@ -219,85 +219,79 @@ form button{
 }
 
 .testimonies{
-    background: rgb(197, 128, 96);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 450px 1fr;
-}
-
-.slideshow{
-    height: 450px;
-    width: 675px;
-    overflow: hidden;
-}
-.cen{
-    position: absolute;
-}
-
-.change{
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
 }
-
-.change .tool-1,
-.change .tool-2,
-.change .tool-3,
-.change .tool-4,
-.change .tool-5{
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
-    transition: 0.5s;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    margin: 0 5px 20px;
+ 
+.slider{
+    overflow: hidden;
+    position: relative;
 }
-
-.tool-1:hover,
-.tool-2:hover,
-.tool-3:hover,
-.tool-4:hover,
-.tool-5:hover{
-    background: #fff;
-}
-
-input[name="p"]{
-    position: absolute;
-    visibility: hidden;
-}
-
-.slides{
-    height: 100%;
+.slider .slider-figure{
+    position: relative;
     width: 500%;
-    display: flex;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+    height: 100%;
 }
 
-.slide{
+.slider .slider-figure .slider-container{
     width: 20%;
-    transition: 0.5s;
+    float: left;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.slide h1{
+@keyframes slider {
+    0%{
+        left: 0%;
+    }
+    20%{
+        left: 0%;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%; 
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+.slider-container h1{
     color: white;
     font-size: 37px;
     font-weight: lighter;
     margin-top: 0;
 }
 
-.slide h2{
+.slider-container h2{
     color: white;
     font-size: 20px;
     font-weight: lighter;
     margin-bottom: 0;
 }
 
-.slide p{
+.slider-container p{
     color: white;
     font-size: 16px;
     font-weight: lighter;
@@ -310,43 +304,28 @@ input[name="p"]{
     line-height: 18px;
 }
 
-.slide:nth-of-type(2){
+.slider-container:nth-of-type(1){
+    background: palegreen;
+}
+.slider-container:nth-of-type(2){
     background: plum;
 }
 
-.slide:nth-of-type(3){
+.slider-container:nth-of-type(3){
     background: peru;
 }
 
-.slide:nth-of-type(4){
+.slider-container:nth-of-type(4){
     background: skyblue;
 }
-
-.slide:nth-of-type(5){
-    background: silver;
+.slider-container:nth-of-type(5){
+    background: palegreen;
 }
 
-#c1:checked ~ .pc1{
-    margin-left: 0%;
-}
 
-#c2:checked ~ .pc1{
-    margin-left: -20%;
-}
-
-#c3:checked ~ .pc1{
-    margin-left: -40%;
-}
-
-#c4:checked ~ .pc1{
-    margin-left: -60%;
-}
-
-#c5:checked ~ .pc1{
-    margin-left: -80%;
-}
 
 .help{
+    grid-column: 2;
     background: var(--green-color);
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -389,7 +368,7 @@ input[name="p"]{
     text-decoration: none;
     color: white;
     font-size: 18px;
-}  
+}
 
 .clientes{
     background: #fcfefc;
@@ -419,4 +398,4 @@ input[name="p"]{
 
 .insured img{
     padding: 20px;
-}
+}   
