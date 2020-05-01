@@ -12,8 +12,9 @@ body{
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
   }
   
   .logo{
@@ -21,8 +22,12 @@ header{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 250px;
-    padding: 20px;
+    padding-top: 20px;
+  }
+
+  .logo img{
+    width: 180px; 
+    height:55px;
   }
   
   .logo p{
@@ -37,16 +42,18 @@ header{
   .menu{
     display: flex;
     justify-content: center;
-    width: 900px;
+    flex-wrap: wrap;
+    padding-top: 30px;
   }
   
   .menu ul{
-    margin: 10px 10px;
+    margin: 10px;
     padding: 0px 20px;
   }
   
   .menu li{
     list-style: none;
+    text-align: center;
   }
   
   .menu a{
@@ -59,31 +66,37 @@ header{
       color: black;
   }
 
-.first-container{
+.first-section{
     display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: 400px;
-    grid-gap: 15px;
-    padding-top: 100px;
-    padding-bottom: 150px;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(6,85px);
 }
 
-.first-container h1{
+
+.first-section h1{
+    grid-column: 3/span 8;
+    grid-row: 2;
     font-size: 25px;
     font-weight: lighter;
     margin-bottom: 5px;
+    text-align: center;
 }
 
-.first-container p{
+.first-section p{
+    grid-column: 5/span 4;
+    grid-row: 3;
     font-size: 15px;
     color: var(--gray-color);
+    text-align: center;
+    margin: 0;
 }
 
 .inputs{
+    grid-column: 5/span 4;
+    grid-row: 4;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
 }
 
 form .user{
@@ -102,55 +115,64 @@ form .log-in{
     color: white;
     margin: 10px;
     border-radius: 2px;
-}
+} 
 
 .second-section{
     display: grid;
-    align-items: center;
-    background: lightslategray;
-    height: 430px;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(7,65px);
+    background: slateblue;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: 500px;
-    justify-content: start;
-    grid-gap: 30px;
-    padding-left: 150px;
-}
-
-.container h1{
-    display: grid;
-    margin: 0;
+.second-section h1{
+    grid-column: 3;
+    grid-row: 2;
     color: white;
     font-weight: lighter;
-
+    
 }
 
-.container p{
-    display: grid;
-    margin: 0;
+.second-section .paragraph-1{
+    grid-column: 3/span 5;
+    grid-row: 3;
+}
+.second-section .paragraph-2{
+    grid-column: 3/span 5;
+    grid-row: 4;
+}
+
+.second-section .paragraph-1,
+.second-section .paragraph-2{
     color: white;
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
-form button{
-    margin-top: 20px;
+.second-section form{
+    grid-column: 3;
+    grid-row: 5;
+    display: flex;
+    align-items: flex-end;
+}
+
+.second-section form button{
     padding: 13px 40px;
     color: white;
     background: var(--green-color);
     border: none;
     border-radius: 2px;
     cursor: pointer;
-}
+}  
 
 
 .third-section{
-    height: 350px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     background: #ffffff;
+    padding: 50px 0;
 }
 
 .works-container{
@@ -185,34 +207,25 @@ form button{
 
 .environment{
     background: #f7efef;
-    height: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.world{
     text-align: center;
+    padding: 40px 250px;
 }
 
-.world img{
+
+.environment img{
     width: 61px;
     height: 62px;
 }
 
-.world h1{
+.environment h1{
     font-size: 30px;
     font-weight: lighter;
     text-transform: capitalize;
-    margin-top: 0;
 }
 
-.world .text{
-    width: 680px;
-    height: 165px;
-}
-
-.world p{
+.environment p{
     font-size: 15px;
     color: var(--gray-color);
     margin: 30px;
@@ -372,11 +385,11 @@ form button{
 
 .clientes{
     background: #fcfefc;
-    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 30px;
 }
 
 .clientes h1{
@@ -384,6 +397,12 @@ form button{
     margin-bottom: 20px;
     font-size: 30px;
 }
+
+.img-clientes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}  
 
 .img-clientes img{
     margin: 20px;
@@ -399,3 +418,178 @@ form button{
 .insured img{
     padding: 20px;
 }   
+
+
+    @media screen and (max-width: 1023px){
+
+        .inputs{
+            grid-column: 4/span 6;
+        }
+        .menu ul{
+            padding: 0;
+        }
+        .second-section .paragraph-1{
+            grid-column: 3/ span 6;
+        }
+        .second-section .paragraph-2{
+            grid-column: 3/ span 6;
+        }
+        .environment{
+            padding: 40px 140px;
+        }
+        .help h1{
+            grid-column: 1/span 7;
+            align-items: center;
+        }
+    }
+    
+    
+    @media screen and (max-width: 767px){
+
+        .menu ul{
+            padding: 0px 10px;
+        }
+        .first-section p{
+            grid-column: 4/span 6;
+            grid-row: 3;
+        }
+        .first-section .inputs{
+            grid-column: 3/span 8;
+        }
+        .second-section .paragraph-1{
+            grid-column: 3/span 7;
+            grid-row: 3/span 2;
+        }
+        .second-section .paragraph-2{
+            grid-column: 3/span 7;
+            grid-row: 5;
+        }
+        .second-section form{
+            grid-row: 6;
+        }
+        .third-section{
+            justify-content: center;
+            padding: 0;
+            flex-direction: column;
+        }
+        .works-container{
+            text-align: center;
+            justify-content: center;
+        }
+        .world {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .environment{
+            padding: 40px 60px;
+        }
+        .help h1{
+            text-align: center;
+        }
+        .help h3{
+            grid-row: 2/span 2;
+            align-items: center;
+        }
+        
+    }
+    
+    
+    @media screen and (max-width: 479px){
+
+        .menu ul {
+            padding: 2px;
+        }
+        .first-section h1{
+            grid-column: 2/span 10;
+            font-size: 23px;
+        }
+        .first-section p{
+            grid-column: 2/span 10;
+            font-size: 13px;
+        }
+        .first-section .inputs {
+            grid-column: 1/span 12;
+        }
+        .second-section{
+            text-align: center;
+        }
+        .second-section h1{
+            grid-column: 3/span 6;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center 
+        }
+        .second-section .paragraph-1{
+            grid-column: 2/span 8;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .second-section .paragraph-2{
+            grid-column: 2/span 8;
+            font-size: 13px;
+        }
+        .second-section form{
+            grid-column: 3/span 6;
+            display: flex;
+            justify-content: center;
+        }
+        .third-section{
+            justify-content: center;
+            padding: 0;
+            flex-direction: column;
+        }
+        .works-container{
+            text-align: center;
+        }
+        .works-container h1{
+            font-size: 19px;
+            padding: 40px 0 15px 0;
+            margin: 0;
+        }
+        .works-container p{
+            font-size: 13px;
+        }
+        .environment {
+            padding: 40px 0;
+        }
+        .environment h1{
+            font-size: 25px;
+        }
+        .environment p{
+            font-size: 13px;
+        }
+    }
+    
+    @media screen and (max-width: 319px){
+
+        .menu ul {
+            padding: 0px 45px;
+            margin: 15px;
+        }
+        .first-section{
+            grid-template-rows: repeat(6,96px);
+        }
+        .first-section p{
+            grid-column: 3/span 8;
+            grid-row: 3/span 2;
+        }
+        .first-section .inputs {
+            grid-row: 5;
+            align-items: flex-start;
+        }
+        .inputs .user{
+            padding: 10px 15px;
+            margin: 0;
+        }
+        .inputs .log-in{
+            padding: 10px 35px;
+            margin: 0;
+        }
+        .environment h1{
+            font-size: 20px;
+        }
+        
+    }
