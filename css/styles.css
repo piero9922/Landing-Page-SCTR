@@ -95,8 +95,8 @@ header{
     grid-column: 5/span 4;
     grid-row: 4;
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 form .user{
@@ -119,7 +119,7 @@ form .log-in{
 
 .second-section{
     display: grid;
-    grid-template-columns: repeat(10,1fr);
+    grid-template-columns: repeat(15,1fr);
     grid-template-rows: repeat(7,65px);
     background: slateblue;
 }
@@ -148,6 +148,7 @@ form .log-in{
     display: flex;
     align-items: center;
     margin: 0;
+    text-align: justify;
 }
 
 .second-section form{
@@ -172,7 +173,7 @@ form .log-in{
     align-items: center;
     justify-content: space-evenly;
     background: #ffffff;
-    padding: 50px 0;
+    padding: 50px 0 50px 90px;
 }
 
 .works-container{
@@ -192,6 +193,7 @@ form .log-in{
     color: var(--gray-color);
     font-size: 15px;
     font-weight: lighter;
+    text-align: justify;
 }
 
 .computer{
@@ -229,6 +231,7 @@ form .log-in{
     font-size: 15px;
     color: var(--gray-color);
     margin: 30px;
+    text-align: justify;
 }
 
 .testimonies{
@@ -342,12 +345,13 @@ form .log-in{
     background: var(--green-color);
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 0.5fr);
+    grid-template-rows: repeat(7, 1fr);
 }
 
 .help h1{
     display: grid;
     grid-column: 2/span 5;
+    grid-row: 2;
     margin: 0;
     justify-content: center;
     align-items: flex-end;
@@ -359,20 +363,23 @@ form .log-in{
 .help h3{
     display: grid;
     grid-column: 3/span 3;
+    grid-row: 3/span 2;
     font-weight: lighter;
     align-items: flex-end;
     text-align: center;
-    margin-bottom: 0;
     font-size: 17px;
     color: white;
+    margin: 0;
 }
 
 .help .email{
     display: grid;
     grid-column: 3/span 3;
-    padding-left: 0;
+    grid-row: 5;
+    padding: 0;
+    margin: 0;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .email li,
@@ -419,6 +426,10 @@ form .log-in{
     padding: 20px;
 }   
 
+    @media screen and (max-width: 1440px){
+
+    }
+
 
     @media screen and (max-width: 1023px){
 
@@ -427,6 +438,12 @@ form .log-in{
         }
         .menu ul{
             padding: 0;
+        }
+        .first-section p{
+            grid-column: 4/span 6;
+        }
+        .second-section {
+            grid-template-columns: repeat(12,1fr);
         }
         .second-section .paragraph-1{
             grid-column: 3/ span 6;
@@ -437,10 +454,15 @@ form .log-in{
         .environment{
             padding: 40px 140px;
         }
+        .environment p{
+            margin: 30px 13px;
+        }
         .help h1{
             grid-column: 1/span 7;
             align-items: center;
         }
+
+
     }
     
     
@@ -450,22 +472,29 @@ form .log-in{
             padding: 0px 10px;
         }
         .first-section p{
-            grid-column: 4/span 6;
+            grid-column: 3/span 8;
             grid-row: 3;
         }
         .first-section .inputs{
             grid-column: 3/span 8;
         }
+        .second-section h1{
+            grid-column: 5/span 4;
+            text-align: center;
+        }
         .second-section .paragraph-1{
-            grid-column: 3/span 7;
+            grid-column: 3/span 8;
             grid-row: 3/span 2;
         }
         .second-section .paragraph-2{
-            grid-column: 3/span 7;
+            grid-column: 3/span 8;
             grid-row: 5;
         }
         .second-section form{
             grid-row: 6;
+            grid-column: 5/span 4;
+            display: flex;
+            justify-content: center;
         }
         .third-section{
             justify-content: center;
@@ -473,7 +502,6 @@ form .log-in{
             flex-direction: column;
         }
         .works-container{
-            text-align: center;
             justify-content: center;
         }
         .world {
@@ -485,12 +513,21 @@ form .log-in{
         .environment{
             padding: 40px 60px;
         }
-        .help h1{
-            text-align: center;
-        }
         .help h3{
-            grid-row: 2/span 2;
+            grid-row: 3/span 2;
             align-items: center;
+            margin: 60px 0 0 0 ;
+        }
+        .help .email{
+            align-items: flex-start;
+            grid-row: 6;
+        }
+        .testimonies{
+            display: flex;
+            flex-direction: column;
+        }
+        .slider .slider-figure .slider-container{
+            padding: 50px 0;
         }
         
     }
@@ -516,23 +553,23 @@ form .log-in{
             text-align: center;
         }
         .second-section h1{
-            grid-column: 3/span 6;
+            grid-column: 4/span 6;
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center 
         }
         .second-section .paragraph-1{
-            grid-column: 2/span 8;
+            grid-column: 3/span 8;
             margin-bottom: 10px;
             font-size: 13px;
         }
         .second-section .paragraph-2{
-            grid-column: 2/span 8;
+            grid-column: 3/span 8;
             font-size: 13px;
         }
         .second-section form{
-            grid-column: 3/span 6;
+            grid-column: 3/span 8;
             display: flex;
             justify-content: center;
         }
@@ -541,9 +578,7 @@ form .log-in{
             padding: 0;
             flex-direction: column;
         }
-        .works-container{
-            text-align: center;
-        }
+        
         .works-container h1{
             font-size: 19px;
             padding: 40px 0 15px 0;
@@ -560,6 +595,34 @@ form .log-in{
         }
         .environment p{
             font-size: 13px;
+            margin: 30px 70px;
+        }
+        .slider-container h1{
+            font-size: 30px;
+        }
+        .slider-container h2{
+            font-size: 18px;
+        }
+        .slider-container p{
+            width: initial;
+            padding-right: 20px;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .help{
+            grid-template-rows: repeat(3, 1fr);
+        }
+        .help h1{
+            grid-row: 1;
+            font-size: 30px;
+        }
+        .help h3{
+            grid-row: 2;
+            margin: 15px 0;
+        }
+        .help .email{
+            grid-row: 3;
+            align-items: center;
         }
     }
     
@@ -574,22 +637,30 @@ form .log-in{
         }
         .first-section p{
             grid-column: 3/span 8;
-            grid-row: 3/span 2;
+            text-align: justify;
         }
         .first-section .inputs {
-            grid-row: 5;
-            align-items: flex-start;
+            grid-row: 4;
+            align-items: flex-end;
         }
         .inputs .user{
             padding: 10px 15px;
-            margin: 0;
+            margin: 0 10px;
         }
         .inputs .log-in{
             padding: 10px 35px;
-            margin: 0;
+            margin: 0 10px;
         }
         .environment h1{
             font-size: 20px;
         }
-        
+        .help h1{
+            font-size: 28px;
+        }
+        .help h3{
+            margin: 0;
+        }
+        .clientes h1{
+            font-size: 26px;
+        }
     }
