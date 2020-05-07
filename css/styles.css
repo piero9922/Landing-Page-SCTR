@@ -43,7 +43,7 @@ body{
 }
 
 .container-header-first{
-    background-image: url('/images/fondo.jpg');
+    background-image: url('../images/fondo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -163,7 +163,7 @@ form .log-in{
 } 
 
 .second-section{
-    background-image: url('/images/nosotros.jpg');
+    background-image: url('../images/nosotros.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -262,7 +262,7 @@ form .log-in{
 }
 
 .environment{
-    background-image: url('/images/ambiente.jpg');
+    background-image: url('../images/ambiente.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
