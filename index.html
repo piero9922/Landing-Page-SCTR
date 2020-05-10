@@ -20,27 +20,27 @@
                     <section class="menu">
                         <ul>
                             <li>
-                              <a href="#Inicio">Inicio</a>
+                              <a id="menu-inicio" href="#Inicio">Inicio</a>
                             </li>
                           </ul>
                         <ul>
                             <li>
-                              <a href="#Nosotros">Nosotros</a>
+                              <a id="menu-nosotros" href="#Nosotros">Nosotros</a>
                             </li>
                           </ul>
                         <ul>
                             <li>
-                              <a href="#Funciona">¿Como Funciona?</a>
+                              <a id="menu-funciona" href="#Funciona">¿Como Funciona?</a>
                             </li>
                           </ul>
                         <ul>
                             <li>
-                              <a href="#Clientes">Clientes</a>
+                              <a id="menu-clientes" href="#Clientes">Clientes</a>
                             </li>
                           </ul>
                         <ul>
                             <li>
-                              <a href="#Ayuda">Ayuda y Opiniones</a>
+                              <a id="menu-ayuda" href="#Ayuda">Ayuda y Opiniones</a>
                             </li>
                           </ul>
                     </section>
@@ -170,17 +170,32 @@
                     const menu = document.querySelector('.menu');
                     // console.log(menu);
                     const burgerButton = document.querySelector('#burger-menu');
+                    const inicio = document.getElementById('menu-inicio');
+                    const nosotros = document.getElementById('menu-nosotros');
+                    const funciona = document.getElementById('menu-funciona');
+                    const clientes = document.getElementById('menu-clientes');
+                    const ayuda = document.getElementById('menu-ayuda');
                     // console.log(burgerButton);
                     
                 
                     ipad.addListener(validation)
                 
-                    function validation (event) {
+                    function validation (event) { 
                       if(event.matches) {
                       burgerButton.addEventListener('click', hideShow)
+                      inicio.addEventListener('click', hideShow)
+                      nosotros.addEventListener('click', hideShow)
+                      funciona.addEventListener('click', hideShow)
+                      clientes.addEventListener('click', hideShow)
+                      ayuda.addEventListener('click', hideShow)
                       }
                       else{
                       burgerButton.removeEventListener('click', hideShow)
+                      inicio.removeEventListener('click', hideShow)
+                      nosotros.removeEventListener('click', hideShow)
+                      funciona.removeEventListener('click', hideShow)
+                      clientes.removeEventListener('click', hideShow)
+                      ayuda.removeEventListener('click', hideShow)
                       }
                     }
                 

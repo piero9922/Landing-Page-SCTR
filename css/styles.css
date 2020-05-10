@@ -538,6 +538,9 @@ form .log-in{
         .menu.is-active{
             left: 0;
         }
+        .menu a:hover{
+            color: var(--text-color);
+        }
         
         .second-section .container-second{
             grid-template-rows: repeat(11,50px);
